@@ -1,45 +1,16 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-module.exports = {
-  // output: {
-  //     path: path.resolve(__dirname, 'result'),
-  //     filename: 'app.bundle.js'
-  // }
-  // mode: 'development',
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    compress: true,
-    port: 8080,
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: 'main.html'
-    }),
-    new MiniCssExtractPlugin()
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.txt$/,
-        loader: 'raw-loader'
-      },
-      {
-        test: /\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
-      }
-    ]
-  },
-  
+const { merge } = require('webpack-merge');
+
+const commonConfig = require('./webpack.common.config.js');
+
+const productionConfig = require('./webpack.production.config.js');
+
+const developmentConfig = require('./webpack.development.config.js');
+
+
+module.exports = (env, args) => {
+  if (env.development) {
+    return merge(commonConfig, developmentConfig);
+  } else {
+    return merge(commonConfig, productionConfig);
+  }
 }
