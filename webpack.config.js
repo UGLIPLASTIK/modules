@@ -7,7 +7,7 @@ const productionConfig = require('./webpack.production.config.js');
 const developmentConfig = require('./webpack.development.config.js');
 
 
-module.exports = (env, args) => {
+module.exports = (env) => {
   if (env.development) {
     return merge(commonConfig, developmentConfig);
   } else {

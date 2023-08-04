@@ -2,17 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
-  // output: {
-  //     path: path.resolve(__dirname, 'result'),
-  //     filename: 'app.bundle.js'
-  // }
-  // mode: 'development',
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
     compress: true,
-    port: 8080,
+    port: 8080
   },
   plugins: [
     new HtmlWebpackPlugin({
