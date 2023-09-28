@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UGLIPLASTIK/moduls.git"
+    "url": "git+https://github.com/UGLIPLASTIK/modules.git"
   },
   "author": "UGLIPLASTIK",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/UGLIPLASTIK/moduls/issues"
+    "url": "https://github.com/UGLIPLASTIK/modules/issues"
   },
-  "homepage": "https://github.com/UGLIPLASTIK/moduls#readme",
+  "homepage": "https://github.com/UGLIPLASTIK/modules#readme",
   "devDependencies": {
     "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
